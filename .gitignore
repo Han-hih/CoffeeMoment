@@ -1,0 +1,36 @@
+# Gradle and Kotlin generated files
+.gradle/
+.kotlin/
+**/build/
+
+# Machine-specific Android SDK configuration
+local.properties
+
+# Android Studio / IntelliJ local settings
+*.iml
+.idea/
+
+# Android native build and profiling outputs
+.externalNativeBuild/
+.cxx/
+captures/
+*.hprof
+*.apk
+*.aab
+
+# Signing keys and local secrets
+*.jks
+*.keystore
+!debug.keystore
+keystore.properties
+key.properties
+secrets.properties
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+._*
+
+# Keep Gradle wrapper files tracked, including gradle-wrapper.jar.
