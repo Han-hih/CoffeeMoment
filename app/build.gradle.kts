@@ -5,11 +5,7 @@ plugins {
 
 android {
     namespace = "com.app.coffeemoment"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.app.coffeemoment"
@@ -40,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":feature:order"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)

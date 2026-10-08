@@ -24,4 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "CoffeeMoment"
 include(":app")
- 
+include(":core:designsystem")
+include(":core:accessibility")
+include(":feature:order")
