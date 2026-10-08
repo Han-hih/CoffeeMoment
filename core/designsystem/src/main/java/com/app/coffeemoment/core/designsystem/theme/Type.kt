@@ -1,4 +1,4 @@
-package com.app.coffeemoment.ui.theme
+package com.app.coffeemoment.core.designsystem.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
