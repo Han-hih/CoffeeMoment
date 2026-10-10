@@ -44,7 +44,6 @@ private val LightColorScheme = lightColorScheme(
     inversePrimary = Green100,
 )
 
-// Dark-mode adaptation of the supplied palette; not a separate Figma specification.
 private val DarkColorScheme = darkColorScheme(
     primary = Green100,
     onPrimary = Green900,
@@ -82,7 +81,6 @@ private val DarkColorScheme = darkColorScheme(
 @Composable
 fun CoffeeMomentTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Keep the brand palette by default; wallpaper colors are opt-in on Android 12+.
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {

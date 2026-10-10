@@ -1,34 +1,32 @@
 package com.app.coffeemoment.core.designsystem.theme
 
 import androidx.compose.material3.Typography
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.app.coffeemoment.core.designsystem.R
 
-// Set of Material typography styles to start with
+val Pretendard = FontFamily(
+    Font(R.font.pretendard_regular, FontWeight.Normal),
+    Font(R.font.pretendard_medium, FontWeight.Medium),
+    Font(R.font.pretendard_semibold, FontWeight.SemiBold),
+    Font(R.font.pretendard_bold, FontWeight.Bold),
+)
+
 val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+    displayLarge = TextStyles.text44b,
+    displayMedium = TextStyles.text44b,
+    displaySmall = TextStyles.text44b,
+    headlineLarge = TextStyles.title38b,
+    headlineMedium = TextStyles.title38b,
+    headlineSmall = TextStyles.title38b,
+    titleLarge = TextStyles.title38b,
+    titleMedium = TextStyles.label26b,
+    titleSmall = TextStyles.label26b,
+    bodyLarge = TextStyles.text24r,
+    bodyMedium = TextStyles.text24r,
+    bodySmall = TextStyles.subText20r,
+    labelLarge = TextStyles.label26b,
+    labelMedium = TextStyles.subText20r,
+    labelSmall = TextStyles.subText20r,
 )
