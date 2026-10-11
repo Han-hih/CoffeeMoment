@@ -11,7 +11,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.app.coffeemoment.core.designsystem.theme.CoffeeMomentTheme
@@ -25,9 +30,16 @@ fun ProceedButton(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
 ) {
+    var isFocused by remember { mutableStateOf(false) }
+
     Button(
         onClick = onClick,
-        modifier = modifier.heightIn(min = 48.dp),
+        modifier = modifier
+            .onFocusChanged { isFocused = it.isFocused }
+            .focusIndicator(
+                isFocused = isFocused,
+            )
+            .heightIn(min = 48.dp),
         enabled = enabled,
         shape = RoundedCornerShape(8.dp),
         colors = ButtonDefaults.buttonColors(
@@ -36,7 +48,7 @@ fun ProceedButton(
         ),
         contentPadding = PaddingValues(horizontal = 20.dp, vertical = 12.dp),
     ) {
-        Text(text = text, style = TextStyles.label26b)
+        Text(text = text, style = TextStyles.label38b)
     }
 }
 

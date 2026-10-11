@@ -59,7 +59,7 @@ fun CartItem(
                 Text(
                     text = name,
                     modifier = Modifier.weight(1f),
-                    style = TextStyles.label26b,
+                    style = TextStyles.label38b,
                 )
                 TextButton(
                     onClick = onRemove,
@@ -69,7 +69,7 @@ fun CartItem(
                 ) {
                     Text(
                         text = stringResource(R.string.cart_item_remove_action),
-                        style = TextStyles.label26b,
+                        style = TextStyles.label38b,
                         modifier = Modifier.clearAndSetSemantics {},
                     )
                 }
@@ -82,7 +82,7 @@ fun CartItem(
                 Text(
                     text = priceText,
                     modifier = Modifier.padding(end = 12.dp, top = 12.dp),
-                    style = TextStyles.text24r,
+                    style = TextStyles.text38r,
                 )
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     TextButton(
@@ -91,7 +91,7 @@ fun CartItem(
                         modifier = Modifier.sizeIn(minWidth = 48.dp, minHeight = 48.dp)
                             .semantics { contentDescription = decreaseLabel },
                     ) {
-                        Text("−", style = TextStyles.label26b, modifier = Modifier.clearAndSetSemantics {})
+                        Text("−", style = TextStyles.label38b, modifier = Modifier.clearAndSetSemantics {})
                     }
                     Text(
                         text = quantity.toString(),
@@ -99,7 +99,7 @@ fun CartItem(
                             contentDescription = quantityLabel
                             liveRegion = LiveRegionMode.Polite
                         },
-                        style = TextStyles.label26b,
+                        style = TextStyles.label38b,
                     )
                     TextButton(
                         onClick = onIncrease,
@@ -107,7 +107,7 @@ fun CartItem(
                         modifier = Modifier.sizeIn(minWidth = 48.dp, minHeight = 48.dp)
                             .semantics { contentDescription = increaseLabel },
                     ) {
-                        Text("+", style = TextStyles.label26b, modifier = Modifier.clearAndSetSemantics {})
+                        Text("+", style = TextStyles.label38b, modifier = Modifier.clearAndSetSemantics {})
                     }
                 }
             }

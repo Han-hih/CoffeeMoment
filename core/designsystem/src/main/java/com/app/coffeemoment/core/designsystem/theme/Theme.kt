@@ -8,9 +8,11 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalContext
+import com.app.coffeemoment.core.accessibility.AccessibilitySettings
 
-private val LightColorScheme = lightColorScheme(
+internal val LightColorScheme = lightColorScheme(
     primary = Green900,
     onPrimary = Cream50,
     primaryContainer = Green100,
@@ -44,7 +46,7 @@ private val LightColorScheme = lightColorScheme(
     inversePrimary = Green100,
 )
 
-private val DarkColorScheme = darkColorScheme(
+internal val DarkColorScheme = darkColorScheme(
     primary = Green100,
     onPrimary = Green900,
     primaryContainer = Green900,
@@ -78,13 +80,60 @@ private val DarkColorScheme = darkColorScheme(
     inversePrimary = Green900,
 )
 
+internal val HighContrastLightColorScheme = lightColorScheme(
+    primary = Green900,
+    onPrimary = PureWhite,
+    primaryContainer = Green100,
+    onPrimaryContainer = PureBlack,
+    secondary = Gray900,
+    onSecondary = PureWhite,
+    secondaryContainer = Green100,
+    onSecondaryContainer = PureBlack,
+    tertiary = Gray900,
+    onTertiary = PureWhite,
+    tertiaryContainer = Green100,
+    onTertiaryContainer = PureBlack,
+    background = PureWhite,
+    onBackground = PureBlack,
+    surface = PureWhite,
+    onSurface = PureBlack,
+    surfaceVariant = Green100,
+    onSurfaceVariant = PureBlack,
+    outline = PureBlack,
+)
+
+internal val HighContrastDarkColorScheme = darkColorScheme(
+    primary = Green100,
+    onPrimary = PureBlack,
+    primaryContainer = Green900,
+    onPrimaryContainer = PureWhite,
+    secondary = PureWhite,
+    onSecondary = PureBlack,
+    secondaryContainer = Gray900,
+    onSecondaryContainer = PureWhite,
+    tertiary = Green100,
+    onTertiary = PureBlack,
+    tertiaryContainer = Green900,
+    onTertiaryContainer = PureWhite,
+    background = PureBlack,
+    onBackground = PureWhite,
+    surface = PureBlack,
+    onSurface = PureWhite,
+    surfaceVariant = Gray900,
+    onSurfaceVariant = PureWhite,
+    outline = PureWhite,
+)
+
 @Composable
 fun CoffeeMomentTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false,
+    accessibilitySettings: AccessibilitySettings = AccessibilitySettings(),
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
+        accessibilitySettings.useHighContrast && darkTheme -> HighContrastDarkColorScheme
+        accessibilitySettings.useHighContrast -> HighContrastLightColorScheme
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
@@ -94,9 +143,13 @@ fun CoffeeMomentTheme(
         else -> LightColorScheme
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+    CompositionLocalProvider(
+        LocalTextScale provides if (accessibilitySettings.useLargeText) 1.2f else 1f,
+    ) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = coffeeTypography(),
+            content = content,
+        )
+    }
 }

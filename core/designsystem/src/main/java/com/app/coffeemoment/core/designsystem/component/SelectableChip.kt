@@ -27,7 +27,7 @@ fun SelectableChip(
     FilterChip(
         selected = selected,
         onClick = onClick,
-        label = { Text(text = text, style = TextStyles.label26b) },
+        label = { Text(text = text, style = TextStyles.label38b) },
         modifier = modifier.heightIn(min = 48.dp),
         enabled = enabled,
         shape = RoundedCornerShape(8.dp),

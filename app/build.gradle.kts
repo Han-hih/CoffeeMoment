@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:accessibility"))
     implementation(project(":core:designsystem"))
     implementation(project(":feature:order"))
     implementation(platform(libs.androidx.compose.bom))

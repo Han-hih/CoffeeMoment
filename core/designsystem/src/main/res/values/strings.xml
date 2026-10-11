@@ -4,4 +4,9 @@
     <string name="cart_item_increase">%1$s 수량 늘리기</string>
     <string name="cart_item_decrease">%1$s 수량 줄이기</string>
     <string name="cart_item_quantity">%1$s 수량 %2$d개</string>
+    <string name="accessibility_large_text">큰 글씨</string>
+    <string name="accessibility_high_contrast">고대비</string>
+    <string name="accessibility_voice_guide">음성 안내</string>
+    <string name="accessibility_low_mode">낮은 모드</string>
+    <string name="accessibility_go_home">처음으로</string>
 </resources>

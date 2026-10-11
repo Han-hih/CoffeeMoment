@@ -53,8 +53,8 @@ fun ProductCard(
                 contentAlignment = Alignment.Center,
                 content = image,
             )
-            Text(text = name, style = TextStyles.label26b)
-            Text(text = priceText, style = TextStyles.text24r)
+            Text(text = name, style = TextStyles.label38b)
+            Text(text = priceText, style = TextStyles.text38r)
         }
     }
 }

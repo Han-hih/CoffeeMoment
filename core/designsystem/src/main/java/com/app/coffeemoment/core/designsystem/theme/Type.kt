@@ -1,6 +1,7 @@
 package com.app.coffeemoment.core.designsystem.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -13,7 +14,8 @@ val Pretendard = FontFamily(
     Font(R.font.pretendard_bold, FontWeight.Bold),
 )
 
-val Typography = Typography(
+@Composable
+fun coffeeTypography(): Typography = Typography(
     displayLarge = TextStyles.text44b,
     displayMedium = TextStyles.text44b,
     displaySmall = TextStyles.text44b,
@@ -21,12 +23,12 @@ val Typography = Typography(
     headlineMedium = TextStyles.title38b,
     headlineSmall = TextStyles.title38b,
     titleLarge = TextStyles.title38b,
-    titleMedium = TextStyles.label26b,
-    titleSmall = TextStyles.label26b,
-    bodyLarge = TextStyles.text24r,
-    bodyMedium = TextStyles.text24r,
-    bodySmall = TextStyles.subText20r,
-    labelLarge = TextStyles.label26b,
-    labelMedium = TextStyles.subText20r,
-    labelSmall = TextStyles.subText20r,
+    titleMedium = TextStyles.label38b,
+    titleSmall = TextStyles.label38b,
+    bodyLarge = TextStyles.text38r,
+    bodyMedium = TextStyles.text38r,
+    bodySmall = TextStyles.subText38r,
+    labelLarge = TextStyles.label38b,
+    labelMedium = TextStyles.subText38r,
+    labelSmall = TextStyles.subText38r,
 )
