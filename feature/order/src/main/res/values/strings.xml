@@ -1,0 +1,14 @@
+<resources>
+    <string name="home_brand">COFFEE / MOMENT</string>
+    <string name="home_welcome">WELCOME</string>
+    <string name="home_screen_description">Coffee Moment 주문 시작 화면</string>
+    <string name="home_title">잠깐의 쉼, 한 잔의 커피</string>
+    <string name="home_description">당신의 취향에 맞는 한 잔을 만나보세요.</string>
+    <string name="home_daily_coffee">YOUR DAILY COFFEE</string>
+    <string name="home_latte_image_description">라테아트가 그려진 따뜻한 카페라테</string>
+    <string name="home_recommendation_title">오늘은 부드러운 카페라테</string>
+    <string name="home_recommendation_description">커피와 함께하는 여유로운 시간</string>
+    <string name="home_order_guide_title">편하게 주문하세요</string>
+    <string name="home_order_guide_description">아래에서 큰 글씨와 고대비를 설정할 수 있어요.</string>
+    <string name="home_start_order">주문 시작하기  →</string>
+</resources>
